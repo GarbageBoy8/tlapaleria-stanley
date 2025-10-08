@@ -216,7 +216,7 @@ html {
 }
 
 .content-banner p {
-	color: var(--primary-color);
+	color: #fff;
 	font-size: 1.2rem;
 	margin-bottom: .5rem;
 	font-weight: 500;
