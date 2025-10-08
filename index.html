@@ -1,38 +1,64 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tlapalería Stanley</title>
-  <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>STANLEY</title>
+  <link rel="stylesheet" href="css/style.css">
+
 </head>
 <body>
-  <!-- Encabezado -->
-  <header>
-    <h1>Tlapalería Stanley</h1>
-    <nav>
-      <ul>
-        <li><a href="#catalogo">Catálogo</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </nav>
+  <header> 
+    <div class="container-hero">
+				<div class="container hero">
+					<div class="customer-support">
+						<i class="fa-solid fa-headset"></i>
+						<div class="content-customer-support">
+							<span class="text">Soporte al cliente</span>
+							<span class="number">123-456-7890</span>
+						</div>
+					</div>
+
+					<div class="container-logo">
+            <img src="img/LogoS.jpg" alt="Logo Tlapaleria">
+					</div>
+
+					<div class="container-user">
+						<i class="fa-solid fa-user"></i>
+						<i class="fa-solid fa-basket-shopping"></i>
+						<div class="content-shopping-cart">
+							<span class="text">Carrito</span>
+							<span class="number">(0)</span>
+						</div>
+					</div>
+				</div>
+			</div>
+
+      <div class="container-navbar">
+				<nav class="navbar container">
+					<i class="fa-solid fa-bars"></i>
+					<ul class="menu">
+						<li><a href="#">Inicio</a></li>
+						<li><a href="#">Nosotros</a></li>
+						<li><a href="#">Nuestros Productos</a></li>
+						<li><a href="#">catalogo</a></li>
+						<li><a href="#">contacto</a></li>
+					</ul>
+
+					<form class="search-form">
+						<input type="search" placeholder="Buscar..." />
+						<button class="btn-search">
+							<i class="fa-solid fa-magnifying-glass"></i>
+						</button>
+					</form>
+				</nav>
+			</div>
   </header>
 
-  <!-- Catálogo de herramientas -->
-  <main>
-    <section id="catalogo">
-      <h2>Catálogo de loool</h2>
-      <div id="lista-productos">
-        <!-- Aquí JS insertará los productos dinámicamente -->
-      </div>
-    </section>
-  </main>
 
-  <!-- Footer -->
-  <footer id="contacto">
-    <p>&copy; 2025 Tlapalería Stanley</p>
-  </footer>
 
-  <script src="script.js"></script>
+
+
+  <script src="https://kit.fontawesome.com/44e03b64d7.js" crossorigin="anonymous"></script>
 </body>
 </html>
