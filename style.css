@@ -139,7 +139,7 @@ html {
 
 .menu a::after {
 	content: '';
-	width: 1.5rem;
+	width: 2rem;
 	height: 1px;
 	background-color: #fff;
 	position: absolute;
@@ -151,7 +151,7 @@ html {
 }
 
 .menu a:hover::after {
-	opacity: 4;
+	opacity: 1;
 }
 
 .menu a:hover {
