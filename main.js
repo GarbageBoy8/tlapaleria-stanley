@@ -1,22 +1,25 @@
 const slides = document.querySelectorAll('.producto-slide');
+const sliderContainer = document.querySelector('.slider-container');
 let current = 0;
+let intervalTime = 3000; // tiempo entre cambios (ms)
+let slideWidth = slides[0].offsetWidth + 32; // incluye el gap (2rem ≈ 32px)
 
-function nextSlide() {
-    // quitar la clase active del slide actual
+function moveSlider() {
+    // quitar clase activa actual
     slides[current].classList.remove('active');
 
-    // pasar al siguiente slide
+    // avanzar al siguiente
     current = (current + 1) % slides.length;
-
-    // añadir la clase active al nuevo slide
     slides[current].classList.add('active');
 
-    // mover el contenedor para centrar el slide activo
-    const sliderContainer = document.querySelector('.slider-container');
-    const slideWidth = slides[current].offsetWidth;
-    const gap = 16; // si tu gap es 2rem, ajusta en px según tu fuente
-    sliderContainer.style.transform = `translateX(-${current * (slideWidth + gap)}px)`;
+    // mover el contenedor
+    sliderContainer.style.transform = `translateX(-${current * slideWidth}px)`;
 }
 
-// cambiar de slide cada 3 segundos
-setInterval(nextSlide, 3000);
+// reiniciar cálculo en caso de redimensionar la pantalla
+window.addEventListener('resize', () => {
+    slideWidth = slides[0].offsetWidth + 32;
+});
+
+// ejecutar cada 3 segundos
+setInterval(moveSlider, intervalTime);
