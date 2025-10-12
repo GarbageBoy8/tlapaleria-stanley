@@ -283,3 +283,135 @@ html {
 		transform: translateX(0);
 	}
 }
+
+/* Seccion Nosotros */
+.nosotros {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	height: 100vh;
+	padding: 0 5rem;
+	background-color: #fff;
+}
+
+/* --- Texto principal --- */
+.nosotros-texto {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	color: #111;
+}
+
+.nosotros-texto h3 {
+	font-size: 1rem;
+	color: #666;
+}
+
+.nosotros-texto h2 {
+	font-size: 2.5rem;
+	margin: 1rem 0;
+}
+
+.nosotros-texto p {
+	font-size: 1.1rem;
+	line-height: 1.6;
+	max-width: 80%;
+	margin-bottom: 2rem;
+}
+
+/* --- Iconos con texto --- */
+.nosotros-iconos {
+	display: flex;
+	gap: 2rem;
+	flex-wrap: wrap;
+	margin-bottom: 2rem;
+}
+
+.icono-item {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	font-size: 1.1rem;
+	color: #333;
+}
+
+.icono-item i {
+	font-size: 1.8rem;
+	color: var(--primary-color, #007bff);
+}
+
+/* --- Botón “Conocer más” --- */
+.btn-conocer {
+	display: inline-block;
+	background-color: var(--primary-color, #007bff);
+	color: #fff;
+	text-decoration: none;
+	padding: 1rem 2.5rem;
+	border-radius: 3rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	transition: all 0.3s ease;
+	width: fit-content;
+}
+
+.btn-conocer:hover {
+	background-color: #0056b3;
+	transform: scale(1.05);
+}
+
+/* --- Lado derecho: imágenes --- */
+.nosotros-imagenes {
+	flex: 1;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.nosotros-imagenes img {
+	border-radius: 10px;
+	object-fit: cover;
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.imagen-grande img {
+	width: 80%;
+}
+
+.imagen-pequena img {
+	width: 45%;
+	position: absolute;
+	bottom: 10%;
+	left: 10%;
+}
+
+/* --- Responsive --- */
+@media (max-width: 900px) {
+	.nosotros {
+		flex-direction: column;
+		text-align: center;
+		height: auto;
+		padding: 2rem;
+	}
+
+	.nosotros-texto,
+	.nosotros-imagenes {
+		flex: none;
+		width: 100%;
+	}
+
+	.nosotros-iconos {
+		justify-content: center;
+	}
+
+	.btn-conocer {
+		margin: 1rem auto;
+	}
+
+	.imagen-pequena img {
+		position: static;
+		margin-top: 1rem;
+		width: 70%;
+	}
+}
