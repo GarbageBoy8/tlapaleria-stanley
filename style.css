@@ -545,6 +545,7 @@ html {
 
 
 .productos-seccion {
+	margin: 8rem;
 	padding: 4rem 8%;
 	background-color: #fff;
 }
@@ -556,6 +557,8 @@ html {
 	gap: 2rem;
 	margin-bottom: 3rem;
 }
+
+
 
 .productos-texto {
 	flex: 1;
@@ -580,8 +583,10 @@ html {
 
 .btn-info {
 	background-color: #051238;
+	left: 0;
+	padding-top: 8.5rem;
 	color: #fff;
-	margin: 1.5rem;
+	margin: 3rem 1.5rem;
 	padding: 0.8rem 1.5rem;
 	border-radius: 2rem;
 	text-decoration: none;
@@ -603,12 +608,14 @@ html {
 
 .productos-imagen img {
 	width: 100%;
+	margin: -10rem 4.8rem;
 	border-radius: 1rem;
-	object-fit: cover;
 }
 
 .productos-icons {
 	display: flex;
+	padding-top: 2.2rem;
+	margin: .2rem;
 	gap: 2rem;
 	flex-wrap: wrap;
 	justify-content: flex-start;
@@ -645,5 +652,333 @@ html {
 
 	.productos-icons {
 		flex-direction: column;
+	}
+}
+
+/*---- Seccion de reparaciones 2.0 -----*/
+
+.seccion-ecoturismo {
+	display: flex;
+	align-items: center;
+	max-width: 1200px;
+	margin: 50px auto;
+	/* Centrar y darle espacio */
+	padding: 20px;
+	gap: 40px;
+}
+
+/* Contenedor de la Imagen y Efecto de Capas */
+.imagen-container {
+	position: relative;
+	flex: 0 0 50%;
+	/* Ocupa la mitad del espacio */
+	max-width: 50%;
+	padding-right: 40px;
+	/* Para hacer espacio al contenido */
+}
+
+.imagen-fondo,
+.imagen-frente {
+	width: 100%;
+	height: auto;
+	border-radius: 10px;
+	object-fit: cover;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+	display: block;
+}
+
+.imagen-fondo {
+	position: absolute;
+	top: 20px;
+	left: 0;
+	opacity: 0.8;
+	/* Ligeramente más opaca */
+	z-index: 1;
+	/* Simula el color más oscuro de la imagen de fondo */
+	background-color: var(--primary-color);
+	min-height: 400px;
+}
+
+.imagen-frente {
+	position: relative;
+	z-index: 2;
+	transform: translate(20px, -20px);
+	/* Desplazamiento para el efecto de capa */
+}
+
+/* Contenido de Texto */
+.contenido-texto {
+	flex: 1;
+	padding: 20px 0;
+}
+
+.etiqueta-nosotros {
+	border: 1px solid #000;
+	padding: 0.3rem 0.8rem;
+	border-radius: 2rem;
+	font-size: 0.9rem;
+	margin-bottom: 1rem;
+	display: inline-block;
+}
+
+.titulo-principal {
+	font-family: var(--font-titulo);
+	font-size: 3rem;
+	line-height: 1.1;
+	margin-bottom: 20px;
+}
+
+.titulo-principal span {
+	display: block;
+
+}
+
+.titulo-principal .linea-2 {
+	font-size: 2.5rem;
+	/* La segunda línea parece ligeramente más pequeña */
+	color: var(--primary-color);
+	/* Usando un color más oscuro para el texto de la segunda línea */
+}
+
+.descripcion {
+	font-size: 1rem;
+	color: var(--color-texto);
+	margin-bottom: 30px;
+}
+
+/* Lista de Características (Checks) */
+.caracteristicas {
+	list-style: none;
+	padding: 0;
+	margin-bottom: 30px;
+}
+
+.caracteristicas li {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 15px;
+	font-size: 1rem;
+	color: var(--primary-color);
+}
+
+.caracteristicas li:before {
+	content: '✔';
+	/* Símbolo de check */
+	color: var(--icon-color);
+	font-size: 1.2rem;
+	margin-right: 10px;
+	line-height: 1.6;
+}
+
+/* Botón VER MÁS */
+.btn-ver-mas {
+	display: inline-flex;
+	align-items: center;
+	padding: 10px 20px;
+	border: 2px solid var(--color-verde-oscuro);
+	color: var(--color-verde-oscuro);
+	text-decoration: none;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 0.9rem;
+	letter-spacing: 1px;
+	border-radius: 50px;
+	transition: all 0.3s ease;
+}
+
+.btn-ver-mas:hover {
+	background-color: var(--color-verde-oscuro);
+	color: var(--color-fondo);
+}
+
+.btn-ver-mas:after {
+	content: ' →';
+	font-size: 1.2rem;
+	margin-left: 5px;
+	line-height: 1;
+}
+
+/* Media Query para responsividad básica */
+@media (max-width: 900px) {
+	.seccion-ecoturismo {
+		flex-direction: column;
+		gap: 20px;
+	}
+
+	.imagen-container {
+		position: relative;
+		margin: 0;
+		padding: 0;
+		flex: 0 0 50%;
+		max-width: 50%;
+		padding-right: 40px;
+		/* Mueve la imagen arriba en móviles */
+		margin-bottom: 40px;
+	}
+
+	.imagen-frente {
+		transform: translate(0, 0);
+	}
+
+	.imagen-fondo {
+		display: none;
+		/* Simplifica el efecto de capa en móvil */
+	}
+
+	.titulo-principal {
+		font-size: 2.5rem;
+	}
+}
+
+
+
+/*---- Footer ------*/
+
+.footer {
+	/* Color base del fondo y la imagen de los árboles */
+	background-color: var(--primary-color);
+	color: #fff;
+	padding: 50px 20px 20px;
+	font-size: 0.95rem;
+}
+
+/* Contenedor principal para limitar el ancho y centrar */
+.footer-contenedor {
+	max-width: 1200px;
+	margin: 0 auto;
+	display: flex;
+	flex-wrap: wrap;
+	/* Permite que los bloques bajen si no caben */
+	gap: 40px;
+	padding-bottom: 20px;
+}
+
+/* Columna Principal (Logo y Descripción) */
+.footer-col-info {
+	flex: 1 1 300px;
+	/* Ocupa al menos 300px y se expande */
+	max-width: 350px;
+}
+
+.footer-logo {
+	margin-bottom: 20px;
+	/* Estilos para el logo (asumiendo que es una imagen) */
+	width: 150px;
+	height: auto;
+	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+	background-color: transparent;
+}
+.footer-logo img{
+	background-color: transparent;
+}
+.footer-descripcion {
+	color: var(--color-texto-secundario);
+	line-height: 1.7;
+}
+
+/* Estilo general para los títulos de columna */
+.footer-titulo {
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: var(--color-texto-principal);
+	margin-bottom: 20px;
+	text-transform: uppercase;
+}
+
+/* Columnas de Navegación y Experiencias */
+.footer-col-nav,
+.footer-col-exp {
+	flex: 1 1 150px;
+	/* Ancho flexible para adaptarse */
+}
+
+.footer-nav ul {
+	list-style: none;
+}
+
+.footer-nav a {
+	color: var(--color-texto-secundario);
+	text-decoration: none;
+	display: block;
+	padding: 5px 0;
+	transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+	color: var(--color-enlace-hover);
+}
+
+/* Columna de Contacto */
+.footer-col-contacto {
+	flex: 1 1 300px;
+	/* Ancho dedicado para el contacto */
+	max-width: 350px;
+}
+
+.contacto-item {
+	display: flex;
+	align-items: flex-start;
+	margin-bottom: 15px;
+	color: var(--color-texto-secundario);
+}
+
+.contacto-item i {
+	/* Iconos de Font Awesome o similar se simulan aquí */
+	font-style: normal;
+	margin-right: 10px;
+	font-size: 1.1rem;
+	color: var(--color-texto-principal);
+	/* Color del ícono */
+	min-width: 20px;
+	/* Asegura que el texto se alinee */
+	text-align: center;
+}
+
+.social-icons a {
+	color: #fff;
+	font-size: 1.4rem;
+	margin-right: 15px;
+	text-decoration: none;
+	transition: color 0.3s ease;
+}
+
+.social-icons {
+	margin-top: 20px;
+}
+
+/* ---------------------------------- */
+/* Copyright Bar */
+/* ---------------------------------- */
+.footer-copyright {
+	max-width: 1200px;
+	margin: 0 auto;
+	text-align: center;
+	padding-top: 20px;
+	border-top: 1px solid rgba(255, 255, 255, 0.1);
+	color: var(--color-copyright);
+	font-size: 0.85rem;
+}
+
+.footer-copyright a {
+	color: var(--color-copyright);
+	text-decoration: none;
+}
+
+.footer-copyright a:hover {
+	text-decoration: underline;
+}
+
+/* Media Query para móvil */
+@media (max-width: 768px) {
+	.footer-contenedor {
+		flex-direction: column;
+		gap: 30px;
+	}
+
+	.footer-col-info,
+	.footer-col-nav,
+	.footer-col-exp,
+	.footer-col-contacto {
+		max-width: 100%;
 	}
 }
