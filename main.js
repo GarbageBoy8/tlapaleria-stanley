@@ -1,3 +1,5 @@
+//porfavor tobi no le muevas nada a este archivo
+
 const slides = document.querySelectorAll('.producto-slide');
 const sliderContainer = document.querySelector('.slider-container');
 let current = 0;
@@ -23,3 +25,6 @@ window.addEventListener('resize', () => {
 
 // ejecutar cada 3 segundos
 setInterval(moveSlider, intervalTime);
+
+
+// aqui inicia tus pendientes tobi
