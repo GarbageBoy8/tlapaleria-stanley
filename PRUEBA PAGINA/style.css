@@ -27,10 +27,10 @@ html {
 
 .formulario .logo {
   position: absolute;   /* imagen flotante sobre el marco */
-  top: -120px;           /* sobre el borde superior */
+  top: -80px;           /* sobre el borde superior */
   left: 50%;            /* centrada horizontalmente */
   transform: translateX(-50%);
-  width: 190px;          /* tamaño de la imagen */
+  width: 110px;          /* tamaño de la imagen */
   height: auto;
   z-index: 10;
 }
