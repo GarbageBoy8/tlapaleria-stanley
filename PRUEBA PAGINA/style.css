@@ -14,7 +14,7 @@ html {
 
 .formulario {
   position: absolute;        
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 400px;
@@ -27,7 +27,7 @@ html {
 
 .formulario .logo {
   position: absolute;   /* imagen flotante sobre el marco */
-  top: -100px;           /* sobre el borde superior */
+  top: -120px;           /* sobre el borde superior */
   left: 50%;            /* centrada horizontalmente */
   transform: translateX(-50%);
   width: 190px;          /* tamaño de la imagen */
