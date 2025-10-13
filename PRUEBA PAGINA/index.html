@@ -2,30 +2,56 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="IE=edge">
-    <title>Inicio de Sesion</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="formulario">
-      <img src="img/forlogin.png" alt="Logo" class="logo">
+        <img src="img/forlogin.png" alt="Logo" class="logo">
         <h1>Inicio de sesión</h1>
-        <form method="post">
-          <div class="username">
-            <input type="text" required>
-            <label>Nombre de Usuario</label>
-          </div>  
-          <div class="username">
-            <input type="password" required>
-            <label>Contraseña</label>
-          </div>
-          <div class="recordar">¿Olvido su contraseña?</div>
-          <input type="submit" value="Iniciar sesión">
-          <div class="registrarse">
-            ¿No tienes una cuenta? <a href="#">Registrate</a>
-            <a href="#">Pagina Principal</a>
-          </div>
+        <form id="loginForm">
+            <div class="username">
+                <input type="text" id="username" required>
+                <label>Nombre de Usuario</label>
+            </div>  
+            <div class="username">
+                <input type="password" id="password" required>
+                <label>Contraseña</label>
+            </div>
+            <div class="recordar">¿Olvidó su contraseña?</div>
+            <input type="submit" value="Iniciar sesión">
+            <div class="registrarse">
+                ¿No tienes una cuenta? <a href="#">Regístrate</a> <br>
+                <a href="index.html">Página Principal</a>
+            </div>
         </form>
     </div>
+
+    <script>
+        // --- Capturar el envío del formulario ---
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault(); // Evita el envío tradicional
+
+            // Leer los valores del formulario
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            try {
+                // Enviar al servidor Node.js
+                const res = await fetch('http://localhost:3000/login', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ username, password })
+                });
+
+                const result = await res.json();
+                alert(result.message);
+            } catch (error) {
+                alert('Error al conectar con el servidor 😢');
+                console.error(error);
+            }
+        });
+    </script>
 </body>
 </html>
