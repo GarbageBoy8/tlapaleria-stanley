@@ -6,6 +6,11 @@ body {
   height: 100vh;
 }
 
+html {
+	font-size: 62.5%;
+	font-family: 'Poppins', sans-serif;
+}
+
 
 .formulario {
   position: absolute;        
