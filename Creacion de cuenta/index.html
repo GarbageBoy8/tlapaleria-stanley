@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Crear Cuenta</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <section class="form-register">
+    <h4>Crear Cuenta</h4>
+    <form>
+      <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre Completo" 
+             required
+             oninvalid="this.setCustomValidity('Completa este campo')"
+             oninput="this.setCustomValidity('')" />
+
+      <input class="controls" type="text" name="usuario" id="usuario" placeholder="Ingrese su Usuario" 
+             required
+             oninvalid="this.setCustomValidity('Completa este campo')"
+             oninput="this.setCustomValidity('')" />
+
+      <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo" 
+             required
+             oninvalid="this.setCustomValidity('Completa este campo')"
+             oninput="this.setCustomValidity('')" />
+
+      <input class="controls" type="password" name="password" id="password" placeholder="Ingrese su Contraseña" 
+             required
+             oninvalid="this.setCustomValidity('Completa este campo')"
+             oninput="this.setCustomValidity('')" />
+
+      <label class="checkbox-container">
+        <input type="checkbox" id="terms" required
+               oninvalid="this.setCustomValidity('Debes aceptar los términos y condiciones')"
+               oninput="this.setCustomValidity('')">
+        <span class="checkmark"></span>
+        Estoy de acuerdo con los Terminos y Condiciones
+      </label>
+
+      <input class="botons" type="submit" value="Registrar" />
+    </form>
+    <p><a href="#">Ya tengo una Cuenta</a></p>
+  </section>
+</body>
+</html>
