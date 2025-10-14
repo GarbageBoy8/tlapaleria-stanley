@@ -28,30 +28,39 @@
         </form>
     </div>
 
+    <!-- 🔹 Script para guardar datos en Google Sheets -->
     <script>
-        // --- Capturar el envío del formulario ---
-        document.getElementById('loginForm').addEventListener('submit', async (e) => {
-            e.preventDefault(); // Evita el envío tradicional
+    // ⚠️ Pega aquí tu URL del Apps Script (la que termina en /exec)
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbx8Ogpnnx9sS2SbMiFRhU4OfxEmNAT5OYto3MtpKIJG7WZVG3ZVRjuOuh88hXSq1G5f/exec';
 
-            // Leer los valores del formulario
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
+    // Esperar a que la página cargue antes de agregar el evento
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById("loginForm");
+        form.addEventListener("submit", e => {
+            e.preventDefault();
 
-            try {
-                // Enviar al servidor Node.js
-                const res = await fetch('http://localhost:3000/login', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ username, password })
-                });
+            const formData = new FormData();
+            formData.append("username", document.getElementById("username").value);
+            formData.append("password", document.getElementById("password").value);
 
-                const result = await res.json();
-                alert(result.message);
-            } catch (error) {
-                alert('Error al conectar con el servidor 😢');
-                console.error(error);
-            }
+            fetch(scriptURL, { method: 'POST', body: formData })
+            .then(res => res.json())
+            .then(result => {
+                console.log("Respuesta del servidor:", result);
+                if (result.result === 'success') {
+                    alert("✅ Datos guardados correctamente en Google Sheets");
+                    form.reset();
+                } else {
+                    alert("❌ Error al guardar los datos: " + JSON.stringify(result));
+                }
+            })
+            .catch(error => {
+                console.error("Error al enviar los datos:", error);
+                alert("❌ No se pudo conectar con Google Sheets");
+            });
         });
+    });
     </script>
 </body>
 </html>
+
