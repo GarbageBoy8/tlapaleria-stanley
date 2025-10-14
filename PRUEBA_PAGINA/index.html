@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="formulario">
+        <img src="img/forlogin.png" alt="Logo" class="logo">
+        <h1>Inicio de sesión</h1>
+        <form id="loginForm">
+            <div class="username">
+                <input type="text" id="username" required>
+                <label>Nombre de Usuario</label>
+            </div>
+            <div class="username">
+                <input type="password" id="password" required>
+                <label>Contraseña</label>
+            </div>
+            <div class="recordar">¿Olvidó su contraseña?</div>
+            <input type="submit" value="Iniciar sesión">
+            <div class="registrarse">
+                ¿No tienes una cuenta? <a href="#">Regístrate</a> <br>
+                <a href="index.html">Página Principal</a>
+            </div>
+        </form>
+    </div>
+
+    <!-- 🔹 Script para guardar datos en Google Sheets -->
+    <script>
+        // ⚠️ Pega aquí tu URL del Apps Script (la que termina en /exec)
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbx8Ogpnnx9sS2SbMiFRhU4OfxEmNAT5OYto3MtpKIJG7WZVG3ZVRjuOuh88hXSq1G5f/exec';
+
+        // Esperar a que la página cargue antes de agregar el evento
+        document.addEventListener("DOMContentLoaded", function () {
+            const form = document.getElementById("loginForm");
+
+            form.addEventListener("submit", e => {
+                e.preventDefault();
+
+                const formData = new FormData();
+                formData.append("username", document.getElementById("username").value);
+                formData.append("password", document.getElementById("password").value);
+
+                fetch(scriptURL, { method: 'POST', body: formData })
+                    .then(res => res.json())
+                    .then(result => {
+                        console.log("Respuesta del servidor:", result);
+
+                        // Verifica distintas posibles respuestas del servidor
+                        if (result.result === 'success' || result.status === 'ok' || result.success === true) {
+                            alert("✅ Has iniciado sesión correctamente");
+                            form.reset();
+
+                            // Espera un momento antes de redirigir (para que el alert se vea)
+                            setTimeout(() => {
+                                window.location.href = "../index.html"; // Ajusta la ruta si es necesario
+                            }, 1000);
+                        } else {
+                            alert("❌ Error al iniciar sesión. Respuesta del servidor: " + JSON.stringify(result));
+                        }
+                    })
+                    .catch(error => {
+                        console.error("Error al enviar los datos:", error);
+                        alert("❌ No se pudo conectar con el servidor");
+                    });
+            });
+        });
+    </script>
+</body>
+
+</html>
