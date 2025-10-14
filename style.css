@@ -861,17 +861,15 @@ html {
 }
 
 .footer-logo {
-	margin-bottom: 20px;
-	/* Estilos para el logo (asumiendo que es una imagen) */
-	width: 150px;
-	height: auto;
-	border-radius: 6px;
-	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
-	background-color: transparent;
+    display: block;
+    margin: 0 auto 20px; /* Centra horizontalmente */
+    width: 150px;
+    height: auto;
+    border-radius: 6px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+    background-color: transparent;
 }
-.footer-logo img{
-	background-color: transparent;
-}
+
 .footer-descripcion {
 	color: var(--color-texto-secundario);
 	line-height: 1.7;
