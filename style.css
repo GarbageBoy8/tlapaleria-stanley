@@ -865,6 +865,7 @@ html {
 	/* Estilos para el logo (asumiendo que es una imagen) */
 	width: 150px;
 	height: auto;
+	border-radius: 6px;
 	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
 	background-color: transparent;
 }
@@ -908,6 +909,10 @@ html {
 	color: var(--color-enlace-hover);
 }
 
+.footer-nav li:hover{
+	text-decoration: underline;
+}
+
 /* Columna de Contacto */
 .footer-col-contacto {
 	flex: 1 1 300px;
@@ -936,7 +941,7 @@ html {
 
 .social-icons a {
 	color: #fff;
-	font-size: 1.4rem;
+	font-size: 2.4rem;
 	margin-right: 15px;
 	text-decoration: none;
 	transition: color 0.3s ease;
