@@ -920,8 +920,8 @@ html {
 
 .contacto-item {
 	display: flex;
-	align-items: flex-start;
-	margin-bottom: 15px;
+	align-items: center;
+	margin-bottom: 10px;
 	color: var(--color-texto-secundario);
 }
 
@@ -929,7 +929,7 @@ html {
 	/* Iconos de Font Awesome o similar se simulan aquí */
 	font-style: normal;
 	margin-right: 10px;
-	font-size: 1.1rem;
+	font-size: 2.1rem;
 	color: var(--color-texto-principal);
 	/* Color del ícono */
 	min-width: 20px;
@@ -948,6 +948,8 @@ html {
 .social-icons {
 	margin-top: 20px;
 }
+
+.social item 
 
 /* ---------------------------------- */
 /* Copyright Bar */
