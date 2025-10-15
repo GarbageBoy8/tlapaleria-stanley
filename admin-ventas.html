@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Ventas | Administrador</title>
+ <link rel="stylesheet" href="../PRUEBA_PAGINA/style.css">
+
+  <script src="https://kit.fontawesome.com/a2e0ad4df7.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="container-hero">
+    <div class="hero container">
+      <div class="container-logo">
+        <img src="img/logo.jpg" alt="Logo">
+      </div>
+      <h1 style="font-size: 2rem; color: var(--primary-color);">Panel de Ventas - Administrador</h1>
+      <div class="container-user">
+        <i class="fa-solid fa-user"></i>
+        <i class="fa-solid fa-right-from-bracket" title="Cerrar sesión"></i>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navbar -->
+  <div class="container-navbar">
+    <nav class="navbar container">
+      <ul class="menu">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Inventario</a></li>
+        <li><a href="#">Ventas</a></li>
+        <li><a href="#">Reportes</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Contenido principal -->
+  <main class="container" style="padding: 4rem 0;">
+    <h2 class="heading-1" style="margin-bottom: 2rem;">Gestión de Ventas</h2>
+
+    <!-- Formulario de nueva venta -->
+    <section style="background: #fff; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1); margin-bottom: 3rem;">
+      <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Registrar nueva venta</h3>
+      <form id="formVenta" class="form-venta" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+        <input type="text" name="producto" placeholder="Producto" required>
+        <input type="number" name="cantidad" placeholder="Cantidad" min="1" required>
+        <input type="number" name="precio" placeholder="Precio unitario" min="0" step="0.01" required>
+        <input type="number" name="total" placeholder="Total" readonly>
+
+        <button type="submit" style="grid-column: 1 / -1; background: var(--primary-color); color: #fff; border: none; padding: 1rem; border-radius: 2rem; cursor: pointer; font-weight: 600;">
+          <i class="fa-solid fa-plus"></i> Agregar Venta
+        </button>
+      </form>
+    </section>
+
+    <!-- Tabla de ventas -->
+    <section style="background: #fff; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+      <h3 style="color: var(--primary-color); margin-bottom: 1rem;">Ventas Registradas</h3>
+      <input type="search" id="buscarVenta" placeholder="Buscar venta..." style="padding: 0.8rem 1rem; width: 100%; border-radius: 2rem; border: 1px solid #ccc; margin-bottom: 1.5rem;">
+
+      <table style="width: 100%; border-collapse: collapse; text-align: left;">
+        <thead style="background: var(--primary-color); color: #fff;">
+          <tr>
+            <th style="padding: 1rem;">Fecha</th>
+            <th style="padding: 1rem;">Producto</th>
+            <th style="padding: 1rem;">Cantidad</th>
+            <th style="padding: 1rem;">Precio Unitario</th>
+            <th style="padding: 1rem;">Total</th>
+            <th style="padding: 1rem;">Acciones</th>
+          </tr>
+        </thead>
+        <tbody id="tablaVentas">
+          <!-- Aquí se insertarán las filas dinámicamente -->
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-copyright">
+      © 2025 Sistema de Ventas | Administrador
+    </div>
+  </footer>
+
+  <script>
+    // Calcula el total automáticamente
+    const form = document.getElementById("formVenta");
+    const inputs = form.elements;
+    inputs.precio.addEventListener("input", calcularTotal);
+    inputs.cantidad.addEventListener("input", calcularTotal);
+
+    function calcularTotal() {
+      const cantidad = parseFloat(inputs.cantidad.value) || 0;
+      const precio = parseFloat(inputs.precio.value) || 0;
+      inputs.total.value = (cantidad * precio).toFixed(2);
+    }
+
+    // Simulación de guardar venta
+    form.addEventListener("submit", e => {
+      e.preventDefault();
+      const nuevaVenta = {
+        fecha: new Date().toLocaleString(),
+        producto: inputs.producto.value,
+        cantidad: inputs.cantidad.value,
+        precio: inputs.precio.value,
+        total: inputs.total.value
+      };
+
+      const fila = `
+        <tr>
+          <td style="padding:1rem;">${nuevaVenta.fecha}</td>
+          <td style="padding:1rem;">${nuevaVenta.producto}</td>
+          <td style="padding:1rem;">${nuevaVenta.cantidad}</td>
+          <td style="padding:1rem;">$${nuevaVenta.precio}</td>
+          <td style="padding:1rem;">$${nuevaVenta.total}</td>
+          <td style="padding:1rem;">
+            <button style="background:#28a745; color:#fff; border:none; border-radius:1rem; padding:0.5rem 1rem;">Editar</button>
+            <button style="background:#dc35
