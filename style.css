@@ -861,17 +861,15 @@ html {
 }
 
 .footer-logo {
-	margin-bottom: 20px;
-	/* Estilos para el logo (asumiendo que es una imagen) */
-	width: 150px;
-	height: auto;
-	border-radius: 6px;
-	filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
-	background-color: transparent;
+    display: block;
+    margin: 0 auto 20px; /* Centra horizontalmente */
+    width: 150px;
+    height: auto;
+    border-radius: 6px;
+    filter: drop-shadow(0 0 5px rgba(0, 0, 0, 0.3));
+    background-color: transparent;
 }
-.footer-logo img{
-	background-color: transparent;
-}
+
 .footer-descripcion {
 	color: var(--color-texto-secundario);
 	line-height: 1.7;
@@ -922,8 +920,8 @@ html {
 
 .contacto-item {
 	display: flex;
-	align-items: flex-start;
-	margin-bottom: 15px;
+	align-items: center;
+	margin-bottom: 10px;
 	color: var(--color-texto-secundario);
 }
 
@@ -931,7 +929,7 @@ html {
 	/* Iconos de Font Awesome o similar se simulan aquí */
 	font-style: normal;
 	margin-right: 10px;
-	font-size: 1.1rem;
+	font-size: 2.1rem;
 	color: var(--color-texto-principal);
 	/* Color del ícono */
 	min-width: 20px;
@@ -950,6 +948,8 @@ html {
 .social-icons {
 	margin-top: 20px;
 }
+
+.social item 
 
 /* ---------------------------------- */
 /* Copyright Bar */
