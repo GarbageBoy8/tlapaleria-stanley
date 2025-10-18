@@ -1,112 +1,117 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  background: linear-gradient(150deg, #040F44, #06196F, #f9f5f0);      
-  height: 100vh;
+    margin: 0;
+    padding: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(150deg, #07092f, #091347, #404156);
+    height: 100vh;
 }
 
 html {
-	font-size: 62.5%;
-	font-family: 'Poppins', sans-serif;
+    font-size: 62.5%;
+    font-family: 'Poppins', sans-serif;
 }
 
 
 .formulario {
-  position: absolute;        
-  top: 55%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 400px;
-  background-color: #f9f5f0;
-  border-radius: 10px;
-  padding: 40px 40px 30px 40px; 
-  box-sizing: border-box;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    background-color: #f9f5f0;
+    border-radius: 10px;
+    padding: 40px 40px 30px 40px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
 .formulario .logo {
-  position: absolute;   /* imagen flotante sobre el marco */
-  top: -80px;           /* sobre el borde superior */
-  left: 50%;            /* centrada horizontalmente */
-  transform: translateX(-50%);
-  width: 110px;          /* tamaño de la imagen */
-  height: auto;
-  z-index: 10;
+    position: absolute;
+    margin: -3rem 0 0 0;
+    /* imagen flotante sobre el marco */
+    top: -60px;
+    /* sobre el borde superior */
+    left: 55%;
+    /* centrada horizontalmente */
+    transform: translateX(-50% );
+    width: 120px;
+    /* tamaño de la imagen */
+    height: 6rem;
+    z-index: 10;
 }
 
 
-.formulario h1{
-text-align: center;
-padding: 0 0 20px 0;
-border-bottom: 1px solid #151515;
+.formulario h1 {
+    text-align: center;
+    padding: 0 0 20px 0;
+    border-bottom: 1px solid #151515;
 }
 
-.formulario form{
-padding: 0 40px;
-box-sizing: border-box;
+.formulario form {
+    padding: 0 40px;
+    box-sizing: border-box;
 }
 
-form .username{
+form .username {
     position: relative;
     border-bottom: 2px solid #deb0b0;
     margin: 30px 0;
 }
 
-.username input{
-width: 100%;
-padding: 0 5px;
-height: 40px;
-font-size: 16px;
-border: none;
-background: none;
-outline: none;
+.username input {
+    width: 100%;
+    padding: 0 5px;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    background: none;
+    outline: none;
 }
 
-.username label{
-position: absolute;
-top: 50%;       
-left: 5px;
-color: #999;
-transform: translateY(-50%);
-font-size: 16px;
-pointer-events: none;
-transition: .5s;
+.username label {
+    position: absolute;
+    top: 50%;
+    left: 5px;
+    color: #999;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transition: .5s;
 }
 
-.username span::before{
-content: '';
-position: absolute;
-top: 40px;
-left: 0;
-width: 100%;
-height: 2px;
-background: #2b3151;
-transition: .5s;
+.username span::before {
+    content: '';
+    position: absolute;
+    top: 40px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #2b3151;
+    transition: .5s;
 }
 
-.username input:focus ~ label,
-.username input:focus ~ label{
+.username input:focus~label,
+.username input:focus~label {
     top: -5px;
     color: #06196F;
 }
 
-.username input:focus ~ span::before,
-.username input:focus ~ span::before{
+.username input:focus~span::before,
+.username input:focus~span::before {
     width: 100%;
 }
 
-.recordar{
+.recordar {
     margin: -5px 0 20px 5px;
     color: rgb(27, 76, 190);
     cursor: pointer
 }
 
-.recordar:hover{
+.recordar:hover {
     text-decoration: underline;
 }
 
-input[type="submit"]{
+input[type="submit"] {
     width: 100%;
     height: 50px;
     border: 1px solid;
@@ -118,29 +123,29 @@ input[type="submit"]{
     outline: none;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     border-color: purple;
     transition: .5s;
 }
 
-.registrarse{
+.registrarse {
     margin: 30px 0;
     text-align: center;
     font-size: 16px;
     color: black;
 }
 
-.registrarse a{
+.registrarse a {
     color: #e09e9e;
     text-decoration: none;
 }
 
-.registrarse a:hover{
+.registrarse a:hover {
     text-decoration: underline;
 }
 
-.username input:focus ~ label,
-.username input:valid ~ label {
+.username input:focus~label,
+.username input:valid~label {
     top: -5px;
     color: #e09e9e;
 }
