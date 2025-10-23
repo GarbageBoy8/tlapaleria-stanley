@@ -1,0 +1,2 @@
+# tlapaleria-stanley
+NO HACER PUSH O COMMITS SIN AVISAR
